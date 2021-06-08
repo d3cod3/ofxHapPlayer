@@ -92,7 +92,7 @@ public:
     virtual void                setLoopState(ofLoopType state) override;
     virtual void                setSpeed(float speed) override;
 /*  virtual void                setFrame(int frame);  // frame 0 = first frame... // TODO: */
-/*  virtual int                 getCurrentFrame() const; // TODO: */
+    virtual int                 getCurrentFrame() const override;
     virtual int                 getTotalNumFrames() const override;
     virtual ofLoopType          getLoopState() const override;
 

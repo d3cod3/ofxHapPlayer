@@ -932,14 +932,30 @@ void ofxHapPlayer::setFrame(int frame)
     }
 }
 */
-/*
- // TODO:
+
 int ofxHapPlayer::getCurrentFrame() const
 {
-    int frameNumber = 0;
-    return frameNumber;
+  std::lock_guard<std::mutex> guard(_lock);
+  if (_videoStream)
+  {
+      if (_clock.period)
+      {
+          float pos = _clock.getTime() / static_cast<float>(_clock.period);
+          float currentFrame = _videoStream->nb_frames * pos;
+
+          return static_cast<int>(currentFrame);
+      }
+      else
+      {
+          return 0;
+      }
+  }
+  else
+  {
+      return 0;
+  }
 }
-*/
+
 
 int ofxHapPlayer::getTotalNumFrames() const
 {
