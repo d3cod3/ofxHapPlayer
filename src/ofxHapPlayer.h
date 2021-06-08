@@ -1,18 +1,18 @@
 /*
  ofxHapPlayer.h
  ofxHapPlayer
- 
+
  Copyright (c) 2013, Tom Butterworth. All rights reserved.
  Redistribution and use in source and binary forms, with or without
  modification, are permitted provided that the following conditions are met:
- 
+
  * Redistributions of source code must retain the above copyright
  notice, this list of conditions and the following disclaimer.
- 
+
  * Redistributions in binary form must reproduce the above copyright
  notice, this list of conditions and the following disclaimer in the
  documentation and/or other materials provided with the distribution.
- 
+
  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
  ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
  WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
@@ -53,10 +53,10 @@ public:
     virtual bool                load(std::string name) override;
     virtual void                close() override;
     virtual void                update() override {};
-    
+
     virtual void                play() override;
     virtual void                stop() override;
-    
+
     virtual bool                isFrameNew() const override;
     virtual ofPixels&           getPixels() override;
     virtual const ofPixels&     getPixels() const override;
@@ -65,12 +65,12 @@ public:
     virtual ofShader *          getShader();
     virtual float               getWidth() const override;
     virtual float               getHeight() const override;
-    
+
     virtual bool                isPaused() const override;
     virtual bool                isLoaded() const override;
     virtual bool                isPlaying() const override;
     std::string                 getError() const;
-    
+
     virtual bool                setPixelFormat(ofPixelFormat pixelFormat) override {return false;};
 
     /*
@@ -79,7 +79,7 @@ public:
     virtual ofPixelFormat       getPixelFormat() const override;
     virtual string              getMoviePath() const;
     virtual bool				getHapAvailable() const; // TODO: delete (and mvar)?
-	
+
     virtual float               getPosition() const override;
     virtual float               getSpeed() const override;
     virtual float               getDuration() const override;
@@ -142,7 +142,7 @@ private:
         int                                 _channels;
         int                                 _sampleRate;
         std::shared_ptr<ofxHap::RingBuffer> _buffer;
-        ofSoundStream                       _soundStream;
+        //ofSoundStream                       _soundStream;
     };
     class DecodedFrame {
     public:
